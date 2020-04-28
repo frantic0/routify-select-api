@@ -60,8 +60,8 @@ Tab 4 content
 
 
   .button{
-    font-size: 1em; 
-    font-family: monospace;
+    /* font-size: 1em; 
+    font-family: monospace; */
   }
 
 </style>

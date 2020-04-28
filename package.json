@@ -21,7 +21,7 @@
     "dev": "run-p watch:routify watch:webpack",
     "watch:webpack": "webpack-dev-server --content-base public",
     "watch:routify": "routify -d --pages ./client/pages",
-    "serve": "spassr --debug --serve-spa --spa-port 5001 --dist-dir ./public --app ../client/main.js"
+    "serve": "spassr --debug --serve-spa --spa-port 5001 --dist-dir ./public --app ./bundle.js --entrypoint ./index.html"
   },
   "dependencies": {}
 }
