@@ -3,10 +3,13 @@
 
   export let showId;
   export let scoped;
-  const { currentTutorial } = scoped
-  // console.log('params', $params)
+  let { currentTutorial } = scoped
+  console.log($params)
   // console.log('showId', showId)
+  console.log(scoped)
 </script>
 
-<p>{showId}</p>
+<p>Scoped: { currentTutorial }</p>
+<p>Params: { $params }</p>
+<p>ShowId: { showId }</p>
 

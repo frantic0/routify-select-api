@@ -4,13 +4,12 @@
   let movie = [];
 
   let tutorials = [
-		{ id: 1, text: `Default`, href: './', content: `Tab 11`  },
-		{ id: 2, text: `Bits`,    href: './tab-2', content: `Tab 12`  },
-		{ id: 3, text: `IXI`,     href: './tab-3', content: `Tab 13`  },
-		{ id: 4, text: `Maya`,    href: './tab-4', content: `Tab 14` }
+		{ id: 1, text: `Default`, href: './', content: `Tab 41`  },
+		{ id: 2, text: `Bits`,    href: './tab-2', content: `Tab 42`  },
+		{ id: 3, text: `IXI`,     href: './tab-3', content: `Tab 43`  },
+		{ id: 4, text: `Maya`,    href: './tab-4', content: `Tab 44` }
 	];
 
-  let counter = 0; 
 
   let currentTutorial = tutorials[0]; 
 
@@ -20,15 +19,9 @@
   }
 
   let previous = e => {
-
-    // if(){
-
-    // }
   }
 
   let next = e => {
-
-    
   }
 
 </script>
@@ -37,11 +30,8 @@ Tab 4 content
 
 <br>
 
-<button class="button-dark" on:click={previous}>
- <span style='font-size: 1em; font-family:Comic Sans MS;'>
-    &#9665;
-  </span>
-
+<button class="button" on:click={previous}>
+  &#9665;
 </button>   
 
 <select class="combobox-dark" 
@@ -55,15 +45,23 @@ Tab 4 content
   {/each}
 </select>   
 
-<button class="button-dark" on:click={next}> 
- <span style='font-size: 1em; font-family:Comic Sans MS;'>
-    &#9655;
-  </span>
+<button class="button" on:click={next}> 
+  &#9655;
 </button>
 
 <br>
 
-<slot scoped={ {currentTutorial} }>
+<slot scoped={ { tutorials } }>
+
 </slot>
 
 
+<style>
+
+
+  .button{
+    font-size: 1em; 
+    font-family: monospace;
+  }
+
+</style>
