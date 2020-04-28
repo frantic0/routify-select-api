@@ -4,7 +4,7 @@
   let movie = [];
 
   let tutorials = [
-		{ id: 1, text: `Default`, href: './', content: `Tab 41`  },
+		{ id: 1, text: `Default`, href: './',      content: `Tab 41`  },
 		{ id: 2, text: `Bits`,    href: './tab-2', content: `Tab 42`  },
 		{ id: 3, text: `IXI`,     href: './tab-3', content: `Tab 43`  },
 		{ id: 4, text: `Maya`,    href: './tab-4', content: `Tab 44` }
@@ -30,7 +30,7 @@ Tab 4 content
 
 <br>
 
-<button class="button" on:click={previous}>
+<button class="navButton" on:click={previous}>
   &#9665;
 </button>   
 
@@ -45,7 +45,7 @@ Tab 4 content
   {/each}
 </select>   
 
-<button class="button" on:click={next}> 
+<button class="navButton" on:click={next}> 
   &#9655;
 </button>
 
@@ -59,9 +59,9 @@ Tab 4 content
 <style>
 
 
-  .button{
-    /* font-size: 1em; 
-    font-family: monospace; */
+  .navButton{
+    font-size: 1em; 
+    font-family: monospace;
   }
 
 </style>
