@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "@sveltech/routify": "^1.0.1-7",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "mini-css-extract-plugin": "^0.6.0",
@@ -21,7 +22,7 @@
     "dev": "run-p watch:routify watch:webpack",
     "watch:webpack": "webpack-dev-server --content-base public",
     "watch:routify": "routify -d --pages ./client/pages",
-    "serve": "spassr --debug --serve-spa --spa-port 5001 --dist-dir ./public --app ./bundle.js --entrypoint ./index.html",
+    "serve": "spassr --debug --serve-spa --spa-port 5002 --dist-dir ./public --app ./bundle.js --entrypoint ./index.html",
     "deploy:now": "cd scripts/now && npm run deploy"
   },
   "dependencies": {}

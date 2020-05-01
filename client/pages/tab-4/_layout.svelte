@@ -1,6 +1,7 @@
 <script>
   import { goto, ready, url } from "@sveltech/routify";
 
+
   let movie = [];
 
   let tutorials = [
