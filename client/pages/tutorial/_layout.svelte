@@ -9,10 +9,8 @@
   let movie = [];
 
   let handleSelect = e => { 
-    let href = e.target.value;
-    console.log("before goto")
-    console.log(href)
-    $goto(href)
+    console.log("DEBUG:tutorial:_layout:handleSelectAndGoTo")
+    $goto(`/tutorial/${$currentTutorial.chapter_dir}/${$currentTutorial.section_dir}/`);
   }
 
   let previous = e => {
@@ -35,9 +33,10 @@ Tutorial content
         bind:value={$currentTutorial} 
         on:change={ e => handleSelect(e) } 
         >
-  {#each $tutorials as { id, text, href, content } }
-    <option value={ href }>
-      {text}
+  <!-- {#each $tutorials as { id, text, chapter_dir, section_dir, href, content } } -->
+  {#each $tutorials as tutorial }
+    <option value={ tutorial }>
+      {tutorial.text}
     </option>
   {/each}
 </select>   

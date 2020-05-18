@@ -35,4 +35,4 @@ export let tutorials = writable([
 		},
 	]);
 
-export let currentTutorial = writable(tutorials[0]);
+export let currentTutorial = writable(tutorials[1]);
