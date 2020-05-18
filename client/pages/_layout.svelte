@@ -2,6 +2,24 @@
   import { url, params } from "@sveltech/routify";
   import { tick, onMount, onDestroy } from 'svelte';
 
+  import { 
+    tutorials,
+    currentTutorial 
+  } from "../store/store.js";
+
+
+  $currentTutorial =	{
+		id: 2,
+		text: `Bits`,
+    chapter_dir: "01-introduction",
+    section_dir: "02-layout",
+		href: "/tutorial/01-introduction/02-layout/",
+		content: `Tab 42`,
+	};
+
+
+  // $: defaults = { chapter: $currentTutorial.chapter_dir, section: $currentTutorial.section_dir};
+
   let defaults = { chapter: '01-introduction', section: '01-basics' }
 
   const unsubscribe = params.subscribe( value => {

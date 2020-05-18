@@ -1,20 +1,17 @@
 <script>
   import { goto, ready, url } from "@sveltech/routify";
-
-
+  
+  import { 
+    tutorials,
+    currentTutorial 
+  } from "../../store/store.js";
+  
   let movie = [];
-
-  let tutorials = [
-		{ id: 1, text: `Default`, href: '/tutorial/01-introduction/01-basics/', content: `Tab 41`  },
-		{ id: 2, text: `Bits`,    href: '/tutorial/01-introduction/02-layout/', content: `Tab 42`  },
-		{ id: 3, text: `IXI`,     href: '/tutorial/02-languages/02-language-2/', content: `Tab 43`  },
-		{ id: 4, text: `Maya`,    href: '/tutorial/03-integration/03-model-2/', content: `Tab 44` }
-	];
-
-  let currentTutorial = tutorials[0]; 
 
   let handleSelect = e => { 
     let href = e.target.value;
+    console.log("before goto")
+    console.log(href)
     $goto(href)
   }
 
@@ -35,10 +32,10 @@ Tutorial content
 </button>   
 
 <select class="combobox-dark" 
-        bind:value={currentTutorial} 
+        bind:value={$currentTutorial} 
         on:change={ e => handleSelect(e) } 
         >
-  {#each tutorials as { id, text, href, content } }
+  {#each $tutorials as { id, text, href, content } }
     <option value={ href }>
       {text}
     </option>
@@ -51,7 +48,7 @@ Tutorial content
 
 <br>
 
-<slot scoped={ { tutorials } }>
+<slot scoped={ currentTutorial.content }>
 
 </slot>
 

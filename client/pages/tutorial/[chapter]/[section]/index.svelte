@@ -3,7 +3,7 @@
 
   export let showId;
   export let scoped;
-  let { currentTutorial } = scoped
+  let { content } = scoped
   
   console.log(params)
   console.log($params)
@@ -11,7 +11,7 @@
   console.log(scoped)
 </script>
 
-<p>Scoped: { currentTutorial }</p>
+<p>Scoped: { content }</p>
 <p>Params: { JSON.stringify($params) }</p>
 <p>ShowId: { showId }</p>
 
