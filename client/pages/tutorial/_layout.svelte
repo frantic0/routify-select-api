@@ -5,12 +5,11 @@
   let movie = [];
 
   let tutorials = [
-		{ id: 1, text: `Default`, href: './',      content: `Tab 41`  },
-		{ id: 2, text: `Bits`,    href: './tab-2', content: `Tab 42`  },
-		{ id: 3, text: `IXI`,     href: './tab-3', content: `Tab 43`  },
-		{ id: 4, text: `Maya`,    href: './tab-4', content: `Tab 44` }
+		{ id: 1, text: `Default`, href: '/tutorial/01-introduction/01-basics/', content: `Tab 41`  },
+		{ id: 2, text: `Bits`,    href: '/tutorial/01-introduction/02-layout/', content: `Tab 42`  },
+		{ id: 3, text: `IXI`,     href: '/tutorial/02-languages/02-language-2/', content: `Tab 43`  },
+		{ id: 4, text: `Maya`,    href: '/tutorial/03-integration/03-model-2/', content: `Tab 44` }
 	];
-
 
   let currentTutorial = tutorials[0]; 
 
@@ -27,7 +26,7 @@
 
 </script>
 
-Tab 4 content
+Tutorial content
 
 <br>
 
