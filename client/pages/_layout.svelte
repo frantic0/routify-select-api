@@ -30,20 +30,20 @@
         $tutorials = json;
         $selected = $tutorials[1];
         console.log('fetch');
-        console.log($tutorials);
+        console.log($selected);
         $ready();
       });
 	}
 
-  // $: defaults = { chapter: $currentTutorial.chapter_dir, section: $currentTutorial.section_dir};
+  $: defaults = { chapter: $selected.chapter_dir, section: $selected.section_dir};
 
   // let defaults = { chapter: '01-introduction', section: '01-basics' }
 
-  const unsubscribe = params.subscribe( value => {
-    console.log(`DEBUG:_layout:params`)
-    console.log(JSON.stringify($params));
-	});
-  onDestroy(unsubscribe);
+  // const unsubscribe = params.subscribe( value => {
+  //   console.log(`DEBUG:_layout:params`)
+  //   console.log(JSON.stringify($params));
+	// });
+  // onDestroy(unsubscribe);
 
 
 
@@ -63,10 +63,11 @@
   <li><a href="/">Tab 1</a></li>
   <li><a href="/tab-2/">Tab 2</a></li>
   <li><a href="/tab-3/">Tab 3</a></li>
+  
   <li><a href="/tutorial/{$selected.chapter_dir}/{$selected.section_dir}/">Tutorial</a></li>
-  <!-- <li><a href={ $url(`/tutorial/${chapter_dir}/${section_dir}/`)}> Tutorial</a></li> -->
-  <!-- <li><a href={ $url('/tutorial/:chapter/:section/', { ...defaults, ...$params } )}>Tutorial</a></li> -->
-  <!-- <li><a href="/tutorial/">Tutorial</a></li> -->
+
+  <!-- <li><a href={ $url('/tutorial/:chapter/:section/', { ...defaults, ...$params } ) }>Tutorial</a></li> -->
+
 </ul>
 
 <slot />

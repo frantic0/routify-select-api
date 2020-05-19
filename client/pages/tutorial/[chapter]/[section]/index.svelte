@@ -1,5 +1,9 @@
 <script>
   import { params } from '@sveltech/routify';
+  import {
+    selected
+  } from '../../../../store/store.js';
+
 
   export let showId;
   export let scoped;
@@ -12,6 +16,7 @@
 </script>
 
 <p>Scoped: { content }</p>
+<p>Selected: { JSON.stringify($selected) }</p>
 <p>Params: { JSON.stringify($params) }</p>
 <p>ShowId: { showId }</p>
 
