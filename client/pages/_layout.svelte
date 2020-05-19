@@ -1,24 +1,39 @@
+<script context="module">
+	export async function preload() {
+		// '/' absolute URL
+		return await fetch(`/tutorial/tutorial.json`)
+                  .then(r => r.json());
+	}
+</script>
+
 <script>
-  import { url, params } from "@sveltech/routify";
+  import { url, params, ready } from "@sveltech/routify";
   import { tick, onMount, onDestroy } from 'svelte';
 
   import { 
     tutorials,
-    currentTutorial 
+    selected 
   } from "../store/store.js";
 
-  // Little hack to make a default value to initialise the reactive URL params
-  // $currentTutorial =	{
-	// 	id: 2,
-	// 	text: `Bits`,
-  //   chapter_dir: "01-introduction",
-  //   section_dir: "02-layout",
-	// 	href: "/tutorial/01-introduction/02-layout/",
-	// 	content: `Tab 42`,
-	// };
+  // $tutorials = await preload();
+
+  // $currentTutorial = $tutorials[1];
 
   
-  $currentTutorial = $tutorials[1];
+  $: load();
+
+  let load = () => {
+		// '/' absolute URL
+		fetch(`/tutorial/tutorial.json`)
+      .then(r => r.json())
+      .then(json => {
+        $tutorials = json;
+        $selected = $tutorials[1];
+        console.log('fetch');
+        console.log($tutorials);
+        $ready();
+      });
+	}
 
   // $: defaults = { chapter: $currentTutorial.chapter_dir, section: $currentTutorial.section_dir};
 
@@ -48,7 +63,7 @@
   <li><a href="/">Tab 1</a></li>
   <li><a href="/tab-2/">Tab 2</a></li>
   <li><a href="/tab-3/">Tab 3</a></li>
-  <li><a href="/tutorial/{$currentTutorial.chapter_dir}/{$currentTutorial.section_dir}/">Tutorial</a></li>
+  <li><a href="/tutorial/{$selected.chapter_dir}/{$selected.section_dir}/">Tutorial</a></li>
   <!-- <li><a href={ $url(`/tutorial/${chapter_dir}/${section_dir}/`)}> Tutorial</a></li> -->
   <!-- <li><a href={ $url('/tutorial/:chapter/:section/', { ...defaults, ...$params } )}>Tutorial</a></li> -->
   <!-- <li><a href="/tutorial/">Tutorial</a></li> -->
