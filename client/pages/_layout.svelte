@@ -35,9 +35,9 @@
       });
 	}
 
-  $: defaults = { chapter: $selected.chapter_dir, section: $selected.section_dir};
+  // $: defaults = { chapter: $selected.chapter_dir, section: $selected.section_dir};
 
-  // let defaults = { chapter: '01-introduction', section: '01-basics' }
+  let defaults = { chapter: '01-introduction', section: '01-basics' }
 
   // const unsubscribe = params.subscribe( value => {
   //   console.log(`DEBUG:_layout:params`)
@@ -64,9 +64,9 @@
   <li><a href="/tab-2/">Tab 2</a></li>
   <li><a href="/tab-3/">Tab 3</a></li>
   
-  <li><a href="/tutorial/{$selected.chapter_dir}/{$selected.section_dir}/">Tutorial</a></li>
+  <li><a href="/tutorial/{$selected.chapter_dir}/{$selected.section_dir}/">Tutorial 1</a></li>
 
-  <!-- <li><a href={ $url('/tutorial/:chapter/:section/', { ...defaults, ...$params } ) }>Tutorial</a></li> -->
+  <li><a href={ $url('/tutorial/:chapter/:section/', { ...defaults, ...$params } ) }>Tutorial 2</a></li>
 
 </ul>
 
